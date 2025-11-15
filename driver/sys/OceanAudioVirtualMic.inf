@@ -1,0 +1,42 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+DriverVer=01/01/2025,0.0.0.1
+CatalogFile=OceanAudioVirtualMic.cat
+PnpLockDown=1
+
+[Manufacturer]
+%ProviderName%=OceanAudio,NTamd64
+
+[OceanAudio.NTamd64]
+%DeviceDesc%=Install, ROOT\OCEANAUDIO_VIRTUALMIC
+
+[Install]
+Include = ks.inf, kscaptur.inf
+Needs   = KS.Registration, KSCAPTUR.Registration.NT
+CopyFiles = DriverCopy
+AddReg = AddRegSettings
+
+[DriverCopy]
+OceanAudioVirtualMic.sys
+
+[AddRegSettings]
+HKR,,FriendlyName,,%DeviceDesc%
+
+[Install.Interfaces]
+AddInterface = %KSCATEGORY_AUDIO%, %KSCATEGORY_AUDIO_STRING%, Install.Interface
+
+[Install.Interface]
+AddReg = AddInterfaceSettings
+
+[AddInterfaceSettings]
+HKR,,CLSID,,%ProxyGUID%
+HKR,,FriendlyName,,%DeviceDesc%
+
+[Strings]
+ProviderName = "OceanAudio"
+DeviceDesc = "OceanAudio Virtual Microphone"
+ProxyGUID = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO_STRING = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"

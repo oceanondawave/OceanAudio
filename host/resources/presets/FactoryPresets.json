@@ -1,0 +1,20 @@
+{
+  "presets": [
+    {
+      "name": "Clean Voice",
+      "plugins": [
+        { "id": "VST3:OceanAudio Core Gate:1.0.0:CoreGate.vst3", "name": "OceanAudio Core Gate" },
+        { "id": "VST3:OceanAudio Core Compressor:1.0.0:CoreCompressor.vst3", "name": "OceanAudio Core Compressor" },
+        { "id": "VST3:OceanAudio Core EQ:1.0.0:CoreEQ.vst3", "name": "OceanAudio Core EQ" }
+      ]
+    },
+    {
+      "name": "Podcast Studio",
+      "plugins": [
+        { "id": "VST3:OceanAudio Core Gate:1.0.0:CoreGate.vst3", "name": "OceanAudio Core Gate" },
+        { "id": "VST3:OceanAudio Core Compressor:1.0.0:CoreCompressor.vst3", "name": "OceanAudio Core Compressor" },
+        { "id": "VST3:OceanAudio Core EQ:1.0.0:CoreEQ.vst3", "name": "OceanAudio Core EQ" }
+      ]
+    }
+  ]
+}
